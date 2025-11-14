@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-// Desafio Batalha Naval MESTRE 
+// Desafio Batalha Naval NÍVEL MESTRE 
 #define TAM 10     // tamanho do tabuleiro
 #define NAVIO 3    // marcação 3
 #define CONE 1     // marcação 1
