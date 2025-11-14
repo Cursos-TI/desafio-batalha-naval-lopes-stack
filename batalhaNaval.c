@@ -1,40 +1,72 @@
 #include <stdio.h>
 
-// Desafio Batalha Naval - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
-// Siga os comentários para implementar cada parte do desafio.
+// Desafio Batalha Naval MESTRE 
+#define TAM 10     // tamanho do tabuleiro
+#define NAVIO 3    // marcação 3
+#define CONE 1     // marcação 1
+#define OCT 2      // marcação 2
 
 int main() {
-    // Nível Novato - Posicionamento dos Navios
-    // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
-    // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
-    // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
+        int t[TAM][TAM] = {0};
+    int i, j;
 
-    // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
-    // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
-    // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
-    // Sugestão: Exiba o tabuleiro completo no console, mostrando 0 para posições vazias e 3 para posições ocupadas.
+    // --- NAVIOS (3) ---
+    t[0][3] = NAVIO;
+    t[1][3] = NAVIO;
 
-    // Nível Mestre - Habilidades Especiais com Matrizes
-    // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
-    // Sugestão: Utilize estruturas de repetição aninhadas para preencher as áreas afetadas por essas habilidades no tabuleiro.
-    // Sugestão: Exiba o tabuleiro com as áreas afetadas, utilizando 0 para áreas não afetadas e 1 para áreas atingidas.
+    t[2][1] = NAVIO;
+    t[2][2] = NAVIO;
+    t[2][3] = NAVIO;
+    t[2][4] = NAVIO;
+    t[2][5] = NAVIO;
 
-    // Exemplos de exibição das habilidades:
-    // Exemplo para habilidade em cone:
-    // 0 0 1 0 0
-    // 0 1 1 1 0
-    // 1 1 1 1 1
-    
-    // Exemplo para habilidade em octaedro:
-    // 0 0 1 0 0
-    // 0 1 1 1 0
-    // 0 0 1 0 0
+    t[3][3] = NAVIO;
+    t[4][3] = NAVIO;
 
-    // Exemplo para habilidade em cruz:
-    // 0 0 1 0 0
-    // 1 1 1 1 1
-    // 0 0 1 0 0
+    // --- ÁREA OCTAEDRO / CRUZ (2) ---
+    t[3][7] = OCT;
 
+    t[4][6] = OCT;
+    t[4][7] = OCT;
+    t[4][8] = OCT;
+
+    t[5][5] = OCT;
+    t[5][6] = OCT;
+    t[5][7] = OCT;
+    t[5][8] = OCT;
+    t[5][9] = OCT;
+
+    t[6][6] = OCT;
+    t[6][7] = OCT;
+    t[6][8] = OCT;
+
+    t[7][7] = OCT;
+
+    // --- ÁREA DO CONE (1) ---
+    t[5][2] = CONE;
+
+    t[6][1] = CONE;
+    t[6][2] = CONE;
+    t[6][3] = CONE;
+
+    t[7][0] = CONE;
+    t[7][1] = CONE;
+    t[7][2] = CONE;
+    t[7][3] = CONE;
+    t[7][4] = CONE;
+
+    // --- IMPRIMIR TABULEIRO ---
+    printf("  ");
+    for (j = 0; j < TAM; j++)
+        printf("%d ", j);
+    printf("\n");
+
+    for (i = 0; i < TAM; i++) {
+        printf("%d ", i);
+        for (j = 0; j < TAM; j++) {
+            printf("%d ", t[i][j]);
+        }
+        printf("\n");
+    }
     return 0;
 }
